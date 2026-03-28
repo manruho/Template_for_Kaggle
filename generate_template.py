@@ -1299,19 +1299,26 @@ def build_readme(spec: Spec) -> str:
 
 ## セットアップ
 
-1. 必要なライブラリをインストールします。
+1. 仮想環境を作成して有効化します。
 
 ```bash
-pip install pandas numpy scikit-learn pyyaml matplotlib seaborn
+uv venv
+source .venv/bin/activate
 ```
 
-2. モデルに応じた追加ライブラリを入れます。
+2. 必要なライブラリをインストールします。
 
 ```bash
-pip install lightgbm xgboost catboost torch tensorflow
+uv pip install pandas numpy scikit-learn pyyaml matplotlib seaborn
 ```
 
-3. Kaggle APIを設定します。
+3. モデルに応じた追加ライブラリを入れます。
+
+```bash
+uv pip install lightgbm xgboost catboost torch tensorflow
+```
+
+4. Kaggle APIを設定します。
 
 ```bash
 mkdir -p ~/.kaggle
@@ -1322,7 +1329,7 @@ chmod 600 ~/.kaggle/kaggle.json
 ## 実験実行
 
 ```bash
-python run_experiment.py --config configs/exp001.yaml --note "first run"
+uv run python run_experiment.py --config configs/exp001.yaml --note "first run"
 ```
 
 ## Kaggleへpush

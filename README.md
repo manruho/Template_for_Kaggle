@@ -6,7 +6,7 @@
 ## 使い方
 
 ```bash
-python3 generate_template.py \
+uv run generate_template.py \
   --competition-slug titanic \
   --task-type binary_classification \
   --metric AUC \
@@ -21,7 +21,7 @@ python3 generate_template.py \
 
 ## 生成されるもの
 
-指定した出力先に、`prompt.txt` で要求されている以下の13ファイルを生成します。
+指定した出力先に、以下の13ファイルを生成します。
 
 - `configs/base.yaml`
 - `configs/exp001.yaml`
